@@ -1,38 +1,53 @@
-# ExpenseWise
+# ExpenseWise - Personal Expense Tracker & Budget Analyzer
 
-## Overview
-ExpenseWise is a lightweight, console-based personal finance tracker and budget analyzer built entirely in Core Java. It allows users to track their incomes and expenses, categorize transactions, and view statistical reports to maintain healthy financial habits without the need for a complex database setup. Data is securely persisted locally using CSV files.
+## Overview of the Project
+ExpenseWise is a lightweight, console-based Personal Finance Tracker built entirely in Core Java. It is designed to help students, freelancers, and professionals log their daily incomes and expenses, monitor monthly budgets, and analyze spending habits offline without the bloat of a heavy graphical user interface. All financial data is persisted locally via file storage.
 
 ## Features
-- **User Management**: Secure login and profile creation.
-- **Transaction Tracking**: Add, view, and categorize incomes and expenses.
-- **Budget Alerts**: Set a monthly budget and receive warnings if expenses exceed limits.
-- **Analytics & Reporting**: View transaction history and expense breakdowns by category.
-- **Data Persistence**: Automatic saving and loading of data using CSV files.
+* **User Management:** Secure profile creation and basic authentication.
+* **Transaction Logging:** Quickly log incomes and categorized expenses (e.g., Food, Rent, Entertainment).
+* **Budget Monitoring:** Set monthly spending limits and receive automatic alerts if a transaction exceeds the budget.
+* **Reporting & Analytics:** Generate instant, text-based summaries showing expense breakdowns and total savings.
+* **Persistent Storage:** Data is stored locally in human-readable files (CSV), ensuring no data is lost between sessions.
 
-## Technologies Used
-- **Language**: Core Java (JDK 8 or higher)
-- **Storage**: File-based storage (CSV)
-- **Architecture**: Object-Oriented Design (MVC pattern principles)
+## Technologies/Tools Used
+* **Language:** Core Java (JDK 8+)
+* **Storage:** File I/O (CSV format)
+* **Architecture:** Console-based UI, Object-Oriented Design (OOD)
+* **Version Control:** Git & GitHub
 
-## Installation & Setup
+## Steps to Install & Run the Project
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/devnagpal/ExpenseWise.git
    ```
-2. Navigate to the project directory:
+2. Navigate to the source code folder:
    ```bash
    cd ExpenseWise/src
    ```
-3. Compile the Java files:
+3. Compile all Java files:
    ```bash
-   javac ExpenseWiseApp.java
+   javac ExpenseWiseApp.java models/*.java services/*.java utils/*.java exceptions/*.java
    ```
 4. Run the application:
    ```bash
    java ExpenseWiseApp
    ```
 
-## Testing
-- Unit testing is performed on core logic (e.g., balance calculations and input validation).
-- Functional testing is done via console input simulations.
+## Instructions for Testing
+You can run the automated validation tests for the core logic by running:
+```bash
+javac ExpenseWiseTest.java
+java ExpenseWiseTest
+```
+
+## Screenshots
+
+ ![Menu](screenshots/1.png)
+ ![Income](screenshots/2.png)
+ ![Validation](screenshots/3.png)
+ ![Expense](screenshots/4.png)
+ ![Expense](screenshots/5.png)
+ ![History](screenshots/6.png)
+ ![Summary](screenshots/7.png)
+ ![CSV](screenshots/8.png)
