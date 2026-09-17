@@ -13,6 +13,13 @@ public class Transaction{
         this.isIncome=isIncome;
         this.date=LocalDate.now();
     }
+    public Transaction(String description,double amount,Category category,boolean isIncome,LocalDate date){
+        this.description=description;
+        this.amount=amount;
+        this.category=category;
+        this.isIncome=isIncome;
+        this.date=date;
+    }
     public double getAmount(){
         return amount;
     }
