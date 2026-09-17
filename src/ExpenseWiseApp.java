@@ -3,6 +3,7 @@ import models.Transaction;
 import models.Category;
 import models.User;
 import services.TransactionManager;
+import exceptions.InvalidTransactionException;
 public class ExpenseWiseApp{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
@@ -20,16 +21,24 @@ public class ExpenseWiseApp{
             String choice = scanner.nextLine();
             switch (choice){
                 case "1":
-                    System.out.print("Enter description: ");
-                    String desc=scanner.nextLine();
-                    System.out.print("Enter amount: ");
-                    double amt=Double.parseDouble(scanner.nextLine());
-                    System.out.print("Is this income? (true/false): ");
-                    boolean isInc=Boolean.parseBoolean(scanner.nextLine());
-                    System.out.print("Enter category (FOOD, RENT, TRANSPORT, ENTERTAINMENT, SALARY, OTHER): ");
-                    Category cat=Category.valueOf(scanner.nextLine().toUpperCase());
-                    manager.addTransaction(new Transaction(desc,amt,cat,isInc));
-                    System.out.println("Transaction added!");
+                    try{
+                        System.out.print("Enter description: ");
+                        String desc=scanner.nextLine();
+                        System.out.print("Enter amount: ");
+                        double amt=Double.parseDouble(scanner.nextLine());
+                        System.out.print("Is this income? (true/false): ");
+                        boolean isInc=Boolean.parseBoolean(scanner.nextLine());
+                        System.out.print("Enter category (FOOD, RENT, TRANSPORT, ENTERTAINMENT, SALARY, OTHER): ");
+                        Category cat=Category.valueOf(scanner.nextLine().toUpperCase());
+                        manager.addTransaction(new Transaction(desc,amt,cat,isInc));
+                        System.out.println("Transaction added!");
+                    }catch(NumberFormatException e){
+                        System.out.println("Error: Please enter a valid number for amount.");
+                    }catch(IllegalArgumentException e){
+                        System.out.println("Error: Invalid category. Please use a provided category.");
+                    }catch(InvalidTransactionException e){
+                        System.out.println("Error: "+e.getMessage());
+                    }
                     break;
                 case "2":
                     System.out.println("--- All Transactions ---");

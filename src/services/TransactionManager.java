@@ -2,13 +2,17 @@ package services;
 import models.Transaction;
 import models.User;
 import utils.FileHandler;
+import exceptions.InvalidTransactionException;
 import java.util.List;
 public class TransactionManager{
     private List<Transaction> transactions;
     public TransactionManager(){
         transactions=FileHandler.loadTransactions();
     }
-    public void addTransaction(Transaction t){
+    public void addTransaction(Transaction t) throws InvalidTransactionException{
+        if(t.getAmount()<=0){
+            throw new InvalidTransactionException("Amount must be greater than zero.");
+        }
         transactions.add(t);
         FileHandler.saveTransactions(transactions);
     }
