@@ -21,9 +21,9 @@ ExpenseWise is a lightweight, console-based Personal Finance Tracker built entir
    ```bash
    git clone https://github.com/devnagpal/ExpenseWise.git
    ```
-2. Navigate to the source code folder:
+2. Navigate to the project folder:
    ```bash
-   cd ExpenseWise/src
+   cd ExpenseWise
    ```
 3. Compile all Java files:
    ```bash
