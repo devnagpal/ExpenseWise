@@ -38,6 +38,6 @@ public class Transaction{
     @Override
     public String toString(){
         String type = isIncome ? "+ Income" : "- Expense";
-        return String.format("[%s] %s | %s: $%.2f",date.toString(),type,category.name(),amount);
+        return String.format("[%s] %s | %s: Rs.%.2f",date.toString(),type,category.name(),amount);
     }
 }

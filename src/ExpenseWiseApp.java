@@ -1,11 +1,13 @@
 import java.util.Scanner;
 import models.Transaction;
 import models.Category;
+import models.User;
 import services.TransactionManager;
 public class ExpenseWiseApp{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         TransactionManager manager=new TransactionManager();
+        User user=new User("Student",1000.0,0.0);
         boolean running=true;
         System.out.println("     Welcome to ExpenseWise!     ");
         while (running){
@@ -34,7 +36,7 @@ public class ExpenseWiseApp{
                     manager.viewAll();
                     break;
                 case "3":
-                    System.out.println("Summary and budget checking!");
+                    manager.printSummary(user);
                     break;
                 case "4":
                     System.out.println("Exiting. See you next time!");
